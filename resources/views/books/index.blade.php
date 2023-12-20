@@ -39,10 +39,11 @@
                             <a href="{{ route('books.show', $book) }}"
                                class="book-title">{{ $book->title }}</a>
                             <span class="book-author">by {{ $book->author }}</span>
+                            <span class="book-author">{{ $book->created_at }}</span>
                         </div>
                         <div>
                             <div class="book-rating">
-                                {{ number_format($book->reviews_avg_rating, 1) }}
+                                <x-star-rating rating="{{ round($book->reviews_avg_rating) }}"/>
                             </div>
                             <div class="book-review-count">
                                 out
